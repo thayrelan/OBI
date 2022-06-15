@@ -4,49 +4,49 @@
 
 int main(){
 
-    int n, m, s, i;
+    int inc_periodo, fim_periodo, soma_algarismos;
     int temp, temp2, soma; 
-    int a = 0, b = 0, c = 0; 
-    int d = 0, e = 0, f = 0; 
+    int milesimo = 0, centena = 0, alg_unidade = 0; 
+    int alg_dezena = 0, alg_centena = 0, alg_ultimo = 0; 
     int numero = -1; 
 
     soma = 0;  
 
-    scanf("%d%d%d", &n, &m, &s);
+    scanf("%d%d%d", &inc_periodo, &fim_periodo, &soma_algarismos);
 
     
 
-    for(temp = n; temp <= m; temp++){
+    for(temp = inc_periodo; temp <= fim_periodo; temp++){
         if(temp == 10000){
             soma = 1;
         }
         else if(temp >= 1000){
-            a = temp%1000;
-            b = a%100; 
-            c = b%10;
-            d = (b-c)/10;
-            e = (a-b)/100;
-            f = (temp-a)/1000;
-            soma = f + e + d + c; 
+            milesimo = temp%1000;
+            centena = milesimo%100; 
+            alg_unidade = centena%10;
+            alg_dezena = (centena-alg_unidade)/10;
+            alg_centena = (milesimo-centena)/100;
+            alg_ultimo = (temp-milesimo)/1000;
+            soma = alg_ultimo + alg_centena + alg_dezena + alg_unidade; 
         }
         else if(temp >= 100){
-            b = temp%100; 
-            c = b%10;
-            d = (b-c)/10;
-            f = (temp-b)/100;
-            soma = f + d + c; 
+            centena = temp%100; 
+            alg_unidade = centena%10;
+            alg_dezena = (centena-alg_unidade)/10;
+            alg_ultimo = (temp-centena)/100;
+            soma = alg_ultimo + alg_dezena + alg_unidade; 
             
         }  
         else if(temp >= 10){
-            b = temp%10; 
-            c = b%10;
-            f = (temp-c)/10;
-            soma = f + c; 
+            centena = temp%10; 
+            alg_unidade = centena%10;
+            alg_ultimo = (temp-alg_unidade)/10;
+            soma = alg_ultimo + alg_unidade; 
         }
         else{
             soma = temp; 
         }
-        if(soma == s){
+        if(soma == soma_algarismos){
             numero = temp; 
         }
 

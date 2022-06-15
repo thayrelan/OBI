@@ -1,1 +1,3 @@
-Programas referentes aos códigos da prova da primeira fase da OBI (Olimpíada Brasileira de Informática)
+# Pós_prova_OBI
+
+Programas referentes aos programas para prova da OBI (FASE-1) adaptados
